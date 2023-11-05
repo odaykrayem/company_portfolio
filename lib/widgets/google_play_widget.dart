@@ -1,3 +1,4 @@
+import 'package:companyportfolio/constants/custom_values.dart';
 import 'package:companyportfolio/extensions/widget_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class GooglePlayWidget extends StatelessWidget {
             height: height,
             width: width,
           ).onTap(() {
-            launchUrlWidget(AppValues.appGooglePlayURL);
+            launchUrlWidget(CustomValues.appGooglePlayURL);
           }),
         ],
       ),

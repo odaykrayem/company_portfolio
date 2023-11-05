@@ -168,29 +168,4 @@ class HomeController extends GetxController {
               )),
         ));
   }
-
-  String getCurrentLanguage() {
-    if (storage.read('language') != null) {
-      return storage.read('language');
-    } else {
-      return 'english';
-    }
-  }
-
-  getLanguageState() {
-    if (storage.read('language') != null) {
-      return setLanguage(storage.read('language'));
-    }
-    setLanguage('english');
-  }
-
-  void setLanguage(String value) {
-    storage.write('language', value);
-
-    Get.updateLocale(value == 'system'
-        ? Get.deviceLocale!
-        : Locale(value == 'english' ? 'en' : 'ar'));
-
-    update();
-  }
 }

@@ -2,15 +2,14 @@ import 'package:companyportfolio/extensions/int_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import '../constants/app_values.dart';
 import '../widgets/google_play_widget.dart';
 import 'details_section.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
 
-  final String aboutDetailsTitle = AppValues.aboutTitle;
-  final String aboutDetailsContent = AppValues.aboutContent;
+  final String aboutUsTitle = 'aboutUsTitle';
+  final String aboutUsContent = 'aboutUsContent';
 
   final String aboutImage = 'assets/images/transfer_2.png';
 
@@ -35,8 +34,8 @@ class AboutUsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               DetailsSection(
-                title: aboutDetailsTitle.tr,
-                content: aboutDetailsContent.tr,
+                title: aboutUsTitle.tr,
+                content: aboutUsContent.tr,
               ),
               const GooglePlayWidget(
                 height: 80,
@@ -79,8 +78,8 @@ class AboutUsScreen extends StatelessWidget {
           ),
           50.height,
           DetailsSection(
-            title: aboutDetailsTitle.tr,
-            content: aboutDetailsContent.tr,
+            title: aboutUsTitle.tr,
+            content: aboutUsContent.tr,
           ),
           100.height,
           const GooglePlayWidget(

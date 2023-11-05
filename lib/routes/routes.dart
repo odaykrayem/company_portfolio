@@ -1,5 +1,5 @@
 import 'package:get/route_manager.dart';
-import 'package:companyportfolio/controllers/home/HomeBinding.dart';
+import 'package:companyportfolio/controllers/home/home_binding.dart';
 import 'package:companyportfolio/screens/layout_template.dart';
 import '../pages/no_connection.dart';
 import '../pages/splash_screen.dart';

@@ -3,6 +3,8 @@
  */
 Map<String, String> english = {
 
+  "companyName":"Company Name",
+
   /** Navbar **/ 
   "home": "Home",
   "aboutUs": "About Us",
@@ -20,5 +22,5 @@ Map<String, String> english = {
 
   /** About-Us Screen */
   "aboutUsTitle":"About Us",
-  "aboutUsContent":"",
+  "aboutUsContent":"Lorem ipsum dolor sit amet, duo at posse dolore, adolescens quaerendum ut sit. Ipsum mundi eam id. Mei id noster deleniti corrumpit, etiam graeco usu ei",
 };

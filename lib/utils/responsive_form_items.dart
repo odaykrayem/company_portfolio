@@ -6,7 +6,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import '../data/enums.dart';
 import '../widgets/custom_text_filed.dart';
 
-Widget formItem({
+Widget responsiveFormItem({
   required String fieldTitle,
   required String field2Title,
   TextEditingController? fieldController,

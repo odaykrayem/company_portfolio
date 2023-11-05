@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:companyportfolio/constants/personal_values.dart';
+import 'package:companyportfolio/constants/custom_values.dart';
 import 'package:companyportfolio/extensions/int_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../constants/app_colors.dart';
 import 'package:companyportfolio/extensions/hover_pointer_extinsion.dart';
-import '../controllers/home/HomeController.dart';
+import '../controllers/home/home_controller.dart';
 import '../data/nav_items_list.dart';
 import 'google_play_widget.dart';
 import 'launcher_widget.dart';
@@ -63,7 +63,7 @@ class Footer extends StatelessWidget {
                   width: 100,
                 ),
               ]),
-              footerGroupItems(title: PersonalValues.companyName, items: [
+              footerGroupItems(title: 'companyName'.tr, items: [
                 ...navigationItemsList.map((e) => footerItem(
                       content: e.title.tr,
                       onTap: () {
@@ -74,19 +74,19 @@ class Footer extends StatelessWidget {
               GetBuilder<HomeController>(builder: (controller) {
                 return footerGroupItems(title: 'contactUs'.tr, items: [
                   footerItem(
-                      content: '${PersonalValues.companyEmail}',
+                      content: '${CustomValues.companyEmail}',
                       icon: CupertinoIcons.mail,
                       onTap: () {
-                        launchUrlWidget('mailto:${PersonalValues.companyEmail}');
+                        launchUrlWidget('mailto:${CustomValues.companyEmail}');
                       }),
                   footerItem(
-                      content: '${PersonalValues.companyPhone}',
+                      content: '${CustomValues.companyPhone}',
                       icon: CupertinoIcons.phone_circle,
                       onTap: () {
-                        launchUrlWidget('tel:${PersonalValues.companyPhone}');
+                        launchUrlWidget('tel:${CustomValues.companyPhone}');
                       }),
                   footerItem(
-                    content: '${PersonalValues.companyLocation}',
+                    content: '${CustomValues.companyLocation}',
                     icon: CupertinoIcons.location_solid,
                   ),
                 ]);
@@ -106,7 +106,7 @@ class Footer extends StatelessWidget {
                       ),
                       children: [
                     TextSpan(
-                        text: ' © 2023 ${PersonalValues.companyName}',
+                        text: ' © 2023 ${CustomValues.companyName}',
                         style: TextStyle(
                           color: AppColors.textPrimaryColor,
                           fontSize: 12,
@@ -174,7 +174,7 @@ class Footer extends StatelessWidget {
               ]),
           footerGroupItems(
               crossAxisAlignment: CrossAxisAlignment.center,
-              title: PersonalValues.companyName,
+              title: 'companyName'.tr,
               items: [
                 ...navigationItemsList.map((e) => footerItem(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -190,21 +190,21 @@ class Footer extends StatelessWidget {
                 title: 'contactUs'.tr,
                 items: [
                   footerItem(
-                      content: '${PersonalValues.companyEmail}',
+                      content: '${CustomValues.companyEmail}',
                       icon: CupertinoIcons.mail,
                       onTap: () {
-                        launchUrlWidget('mailto:${PersonalValues.companyEmail}');
+                        launchUrlWidget('mailto:${CustomValues.companyEmail}');
                       },
                       mainAxisAlignment: MainAxisAlignment.center),
                   footerItem(
-                      content: '${PersonalValues.companyPhone}',
+                      content: '${CustomValues.companyPhone}',
                       icon: CupertinoIcons.phone_circle,
                       onTap: () {
-                        launchUrlWidget('tel:${PersonalValues.companyPhone}');
+                        launchUrlWidget('tel:${CustomValues.companyPhone}');
                       },
                       mainAxisAlignment: MainAxisAlignment.center),
                   footerItem(
-                      content: '${PersonalValues.companyLocation}',
+                      content: '${CustomValues.companyLocation}',
                       icon: CupertinoIcons.location_solid,
                       mainAxisAlignment: MainAxisAlignment.center),
                 ]);
@@ -252,11 +252,11 @@ class Footer extends StatelessWidget {
                 child: Image.asset(imagePath),
               )
             : Container(
-                margin: const EdgeInsets.only(bottom: 15, top: 15),
+                margin: const EdgeInsets.only(bottom: 8, top: 15),
                 child: Text(
                   title!,
                   style: const TextStyle(
-                      color: Colors.white,
+                      color: AppColors.lightPurple,
                       fontSize: 20,
                       fontFamily: 'Outfit-Medium'),
                 ),

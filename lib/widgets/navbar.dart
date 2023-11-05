@@ -5,7 +5,7 @@ import 'package:companyportfolio/widgets/dropdown_button_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:companyportfolio/controllers/home/HomeController.dart';
+import 'package:companyportfolio/controllers/home/home_controller.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../constants/app_colors.dart';
 import '../data/nav_items_list.dart';

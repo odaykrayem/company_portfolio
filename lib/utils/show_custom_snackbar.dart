@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:companyportfolio/constants/personal_values.dart';
+import 'package:companyportfolio/constants/custom_values.dart';
 
 import '../constants/app_colors.dart';
 import '../constants/app_values.dart';
 
 void showCustomSnackBar(String message,
-    {bool isError = false, String title = PersonalValues.companyName}) {
+    {bool isError = false, String title = CustomValues.companyName}) {
   //titleText and mesasgeText are customization
   Get.snackbar(
     title, message,

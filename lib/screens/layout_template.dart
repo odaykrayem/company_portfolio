@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../constants/app_colors.dart';
-import '../controllers/home/HomeController.dart';
+import '../controllers/home/home_controller.dart';
 import '../utils/custom_scroll_behavior.dart';
 import '../widgets/footer.dart';
 import '../widgets/navbar.dart';

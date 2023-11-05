@@ -9,7 +9,6 @@ class AppValues {
   static const String homeContent =
       'sendMoneyToAnyOneOrTransferYourBalanceToMoneyWithUs';
   static const String homeButtonText = 'transferNow';
-  static const String appGooglePlayURL = '';
 
   //Colors
   static const Color navBarColor = AppColors.primaryColor;

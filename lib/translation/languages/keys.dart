@@ -5,6 +5,8 @@
  * */
 Map<String, String> languageMapName = {
 
+  "companyName":"",
+
   /** Navbar **/ 
   "home": "",
   "aboutUs": "",

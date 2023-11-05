@@ -2,7 +2,7 @@ import 'package:companyportfolio/extensions/int_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../constants/app_colors.dart';
-import '../controllers/home/HomeController.dart';
+import '../controllers/home/home_controller.dart';
 import '../data/nav_items_list.dart';
 import 'custom_nav_button.dart';
 import 'navbar_item.dart';

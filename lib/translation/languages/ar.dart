@@ -3,6 +3,8 @@
  */
 Map<String, String> arabic = {
 
+  "companyName":"اسم الشركة",
+
   /** Navbar **/ 
   "home": "الرئيسية",
   "aboutUs": "معلومات عنا",
@@ -20,7 +22,7 @@ Map<String, String> arabic = {
   "homeButton":"تواصل معنا",
 
   /** About-Us Screen */
-  "aboutUsTitle":"",
-  "aboutUsContent":"",
+  "aboutUsTitle":"معلومات عنا",
+  "aboutUsContent":"قبل لم كردة الصفحات, يقوم تعديل وبغطاء به، عل. حدى أهّل الأرض العالم، أي. أي يتم أسيا الخاصّة المشتّتون. قد وزارة منتصف العالم، لان, وتم ما كردة منتصف ايطاليا،. أم ذات بداية قتيل،. جيما والروسية ايطاليا، هو كان.",
 
 };

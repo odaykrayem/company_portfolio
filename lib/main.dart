@@ -1,4 +1,4 @@
-import 'package:companyportfolio/constants/personal_values.dart';
+import 'package:companyportfolio/constants/custom_values.dart';
 import 'package:flutter/material.dart';
 import 'package:companyportfolio/routes/routes.dart';
 import 'package:companyportfolio/translation/localization/localization.dart';
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         //   );
         // },
         debugShowCheckedModeBanner: false,
-        title: PersonalValues.companyName,
+        title: 'companyName'.tr,
         getPages: Routes.routes,
         initialRoute: Routes.main,
         initialBinding: AppBinding(),
