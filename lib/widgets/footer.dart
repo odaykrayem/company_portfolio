@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../constants/app_colors.dart';
 import 'package:companyportfolio/extensions/hover_pointer_extinsion.dart';
-import '../constants/app_values.dart';
 import '../controllers/home/HomeController.dart';
 import '../data/nav_items_list.dart';
 import 'google_play_widget.dart';
@@ -14,7 +13,8 @@ import 'launcher_widget.dart';
 
 class Footer extends StatelessWidget {
   Footer({super.key});
-  final Color backgroundColor = AppColors.secondaryColor;
+  final Color backgroundColor = AppColors.primaryColor;
+  final String footerImagePath = 'assets/images/logo.png';
   final HomeController _homeController = Get.find();
 
   @override
@@ -29,16 +29,24 @@ class Footer extends StatelessWidget {
   Widget footerTabletDesktop() {
     return Container(
       height: 310,
-      padding: const EdgeInsets.only(right: 100, left: 100, top: 25, bottom: 5),
-      color: backgroundColor,
+      padding: const EdgeInsets.only(right: 80, left: 80, top: 25, bottom: 5),
+      decoration: BoxDecoration(
+         borderRadius: BorderRadius.only(
+           topRight: Radius.circular(20.0),
+           topLeft: Radius.circular(20.0),
+           
+           ),
+           color: backgroundColor
+      ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              footerGroupItems(imagePath: 'assets/images/logo128.png', items: [
+              footerGroupItems(imagePath: footerImagePath, items: [
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   width: 250,
@@ -55,7 +63,7 @@ class Footer extends StatelessWidget {
                   width: 100,
                 ),
               ]),
-              footerGroupItems(title: PersonalValues.appName, items: [
+              footerGroupItems(title: PersonalValues.companyName, items: [
                 ...navigationItemsList.map((e) => footerItem(
                       content: e.title.tr,
                       onTap: () {
@@ -66,19 +74,19 @@ class Footer extends StatelessWidget {
               GetBuilder<HomeController>(builder: (controller) {
                 return footerGroupItems(title: 'contactUs'.tr, items: [
                   footerItem(
-                      content: '${PersonalValues.appEmail}',
+                      content: '${PersonalValues.companyEmail}',
                       icon: CupertinoIcons.mail,
                       onTap: () {
-                        launchUrlWidget('mailto:${PersonalValues.appEmail}');
+                        launchUrlWidget('mailto:${PersonalValues.companyEmail}');
                       }),
                   footerItem(
-                      content: '${PersonalValues.appPhone}',
+                      content: '${PersonalValues.companyPhone}',
                       icon: CupertinoIcons.phone_circle,
                       onTap: () {
-                        launchUrlWidget('tel:${PersonalValues.appPhone}');
+                        launchUrlWidget('tel:${PersonalValues.companyPhone}');
                       }),
                   footerItem(
-                    content: '${PersonalValues.appLocation}',
+                    content: '${PersonalValues.companyLocation}',
                     icon: CupertinoIcons.location_solid,
                   ),
                 ]);
@@ -91,16 +99,16 @@ class Footer extends StatelessWidget {
             children: [
               RichText(
                   text: const TextSpan(
-                      text: '2023 © Copyright ',
+                      text: 'Copyright ',
                       style: TextStyle(
                         color: AppColors.textPrimaryColor,
                         fontSize: 12,
                       ),
                       children: [
                     TextSpan(
-                        text: '',
+                        text: ' © 2023 ${PersonalValues.companyName}',
                         style: TextStyle(
-                          color: AppColors.boldTextColor,
+                          color: AppColors.textPrimaryColor,
                           fontSize: 12,
                         )),
                     // WidgetSpan(
@@ -146,7 +154,7 @@ class Footer extends StatelessWidget {
         children: [
           footerGroupItems(
               crossAxisAlignment: CrossAxisAlignment.center,
-              imagePath: 'assets/images/logo128.png',
+              imagePath: footerImagePath,
               items: [
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -166,7 +174,7 @@ class Footer extends StatelessWidget {
               ]),
           footerGroupItems(
               crossAxisAlignment: CrossAxisAlignment.center,
-              title: PersonalValues.appName,
+              title: PersonalValues.companyName,
               items: [
                 ...navigationItemsList.map((e) => footerItem(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -182,21 +190,21 @@ class Footer extends StatelessWidget {
                 title: 'contactUs'.tr,
                 items: [
                   footerItem(
-                      content: '${PersonalValues.appEmail}',
+                      content: '${PersonalValues.companyEmail}',
                       icon: CupertinoIcons.mail,
                       onTap: () {
-                        launchUrlWidget('mailto:${PersonalValues.appEmail}');
+                        launchUrlWidget('mailto:${PersonalValues.companyEmail}');
                       },
                       mainAxisAlignment: MainAxisAlignment.center),
                   footerItem(
-                      content: '${PersonalValues.appPhone}',
+                      content: '${PersonalValues.companyPhone}',
                       icon: CupertinoIcons.phone_circle,
                       onTap: () {
-                        launchUrlWidget('tel:${PersonalValues.appPhone}');
+                        launchUrlWidget('tel:${PersonalValues.companyPhone}');
                       },
                       mainAxisAlignment: MainAxisAlignment.center),
                   footerItem(
-                      content: '${PersonalValues.appLocation}',
+                      content: '${PersonalValues.companyLocation}',
                       icon: CupertinoIcons.location_solid,
                       mainAxisAlignment: MainAxisAlignment.center),
                 ]);
@@ -269,7 +277,7 @@ class Footer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 15),
+        margin: const EdgeInsets.only(bottom: 10),
         child: Row(
           mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
           children: [
@@ -283,7 +291,7 @@ class Footer extends StatelessWidget {
             5.width,
             Text(
               content,
-              style: const TextStyle(color: Colors.white, fontSize: 16),
+              style: const TextStyle(color: Colors.white, fontSize: 14),
               softWrap: true,
             ),
           ],

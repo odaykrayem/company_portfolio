@@ -8,7 +8,8 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onTap;
   CustomButton({super.key, required this.title, required this.onTap});
 
-  final BorderRadius btnBorderRadius = BorderRadius.circular(15);
+  final BorderRadius btnBorderRadius = BorderRadius.circular(20);
+  var buttonColor = AppColors.primaryGradientColor;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -36,9 +37,8 @@ class CustomButton extends StatelessWidget {
         ),
       ),
       decoration: BoxDecoration(
-        color: AppColors.primaryColor,
-        // gradient: ColorGradient.backgroundBtn,
-
+        // color: buttonColor,
+        gradient: buttonColor,
         borderRadius: btnBorderRadius,
       ),
     );
@@ -56,8 +56,8 @@ class CustomButton extends StatelessWidget {
         ),
       ),
       decoration: BoxDecoration(
-        color: AppColors.primaryColor,
-        // gradient: ColorGradient.backgroundBtn,
+        // color: buttonColor,
+        gradient: buttonColor,
         borderRadius: btnBorderRadius,
       ),
     );

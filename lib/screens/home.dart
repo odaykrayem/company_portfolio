@@ -3,28 +3,32 @@ import 'package:companyportfolio/extensions/int_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import '../constants/app_values.dart';
 import '../widgets/custom_button.dart';
 import 'details_section.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  final String homeDetailsTitle = AppValues.homeTitle;
-  final String homeDetailsContent = AppValues.homeContent;
-  final String homeButtonText = AppValues.homeButtonText;
+  final String homeTitle = 'homeTitle';
+  final String homeContent = 'homeContent';
+  final String homeButtonText = 'homeButton';
   final String homeImage = 'assets/images/transfer_1.png';
   final HomeController _homeController = Get.find<HomeController>();
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: ScreenTypeLayout.builder(
-        mobile: (_) => homeMobile(),
-        desktop: (_) => homeDesktop(),
-        tablet: (_) => homeMobile(),
-      ),
+    // return Directionality(
+    //   textDirection: TextDirection.ltr,
+    //   child: ScreenTypeLayout.builder(
+    //     mobile: (_) => homeMobile(),
+    //     desktop: (_) => homeDesktop(),
+    //     tablet: (_) => homeMobile(),
+    //   ),
+    // );
+    return ScreenTypeLayout.builder(
+      mobile: (_) => homeMobile(),
+      desktop: (_) => homeDesktop(),
+      tablet: (_) => homeMobile(),
     );
   }
 
@@ -43,8 +47,8 @@ class HomeScreen extends StatelessWidget {
           ),
           40.height,
           DetailsSection(
-            title: homeDetailsTitle.tr,
-            content: homeDetailsContent.tr,
+            title: homeTitle.tr,
+            content: homeContent.tr,
           ),
           30.height,
           CustomButton(
@@ -84,14 +88,14 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               DetailsSection(
-                title: homeDetailsTitle.tr,
-                content: homeDetailsContent.tr,
+                title: homeTitle.tr,
+                content: homeContent.tr,
               ),
               Center(
                 child: CustomButton(
                   title: homeButtonText.tr,
                   onTap: () {
-                   _homeController.changePage(3);
+                   _homeController.changePage(4);
                   },
                 ),
               ),

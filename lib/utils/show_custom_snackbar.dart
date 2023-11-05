@@ -6,7 +6,7 @@ import '../constants/app_colors.dart';
 import '../constants/app_values.dart';
 
 void showCustomSnackBar(String message,
-    {bool isError = false, String title = PersonalValues.appName}) {
+    {bool isError = false, String title = PersonalValues.companyName}) {
   //titleText and mesasgeText are customization
   Get.snackbar(
     title, message,

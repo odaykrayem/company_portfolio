@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:companyportfolio/constants/personal_values.dart';
-import 'package:companyportfolio/utils/http_override.dart';
 import 'package:flutter/material.dart';
 import 'package:companyportfolio/routes/routes.dart';
 import 'package:companyportfolio/translation/localization/localization.dart';
@@ -28,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final storage = GetStorage();
 
-    String lang = storage.read('language') == 'english' ? 'en' : 'ar';
+    String lang = storage.read('language')??'en' ;
     return GetMaterialApp(
         // scrollBehavior: MaterialScrollBehavior().copyWith(
         //   dragDevices: {
@@ -50,12 +47,12 @@ class MyApp extends StatelessWidget {
         //   );
         // },
         debugShowCheckedModeBanner: false,
-        title: PersonalValues.appName,
+        title: PersonalValues.companyName,
         getPages: Routes.routes,
         initialRoute: Routes.main,
         initialBinding: AppBinding(),
         translations: AppLocalization(),
-        locale: Locale('en'),
+        locale: Locale(lang),
         home: LayoutTemplate(),
         theme: ThemeData(
           splashColor: Colors.transparent,

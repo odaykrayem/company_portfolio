@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppValues {
  
-  static const String aboutTitle = 'companyportfolio';
+  static const String aboutTitle = 'Company Portfolio';
   static const String aboutContent = 'youCanNowTransferMoneyEasly';
   static const String homeTitle = 'transferingMoneyMadeSimple';
   static const String homeContent =

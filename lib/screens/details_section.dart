@@ -27,7 +27,7 @@ class DetailsSection extends StatelessWidget {
                     fontSize: sizingInformation.deviceScreenType ==
                             DeviceScreenType.mobile
                         ? 40
-                        : 80,
+                        : 42,
                     color: AppColors.textPrimaryColor),
                 textAlign: textAlignment,
               ),
@@ -40,12 +40,12 @@ class DetailsSection extends StatelessWidget {
                     fontSize: sizingInformation.deviceScreenType ==
                             DeviceScreenType.mobile
                         ? 16
-                        : 21,
-                    height: 2,
+                        : 18,
+                    height: 1,
                     color: AppColors.textSecondaryColor,
                   ),
                   textAlign: textAlignment,
-                  maxLines: 2,
+                  // maxLines: 2,
                   softWrap: true,
                 ),
               )

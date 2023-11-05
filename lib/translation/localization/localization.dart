@@ -5,6 +5,13 @@ import '../languages/ar.dart';
 import '../languages/en.dart';
 
 class AppLocalization implements Translations {
+  /**Add New Language with localization code to the map
+  in pairs like : 'localizationCode': 'languageMapName',
+  don't forget to import langauge file.
+  **/
   @override
-  Map<String, Map<String, String>> get keys => {'ar': arabic, 'en': english};
+  Map<String, Map<String, String>> get keys => {
+        'ar': arabic,
+        'en': english,
+      };
 }

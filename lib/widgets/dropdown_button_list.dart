@@ -1,12 +1,9 @@
-import 'dart:math';
-
 import 'package:companyportfolio/extensions/int_extention.dart';
+import 'package:companyportfolio/models/language_model.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_network/image_network.dart';
 import '../constants/app_colors.dart';
-import '../models/method_model.dart';
 
 class CustomDropDownButtonList extends StatelessWidget {
   CustomDropDownButtonList(
@@ -14,106 +11,70 @@ class CustomDropDownButtonList extends StatelessWidget {
       required this.list,
       required this.onChanged,
       required this.value,
-      required this.isReceive});
+      });
   final List<dynamic> list;
-  final void Function(MethodModel?)? onChanged;
-  final MethodModel? value;
-  final bool isReceive;
+  final void Function(LanguageModel?)? onChanged;
+  final LanguageModel? value;
 
   @override
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
-      child: DropdownButton2<MethodModel>(
+      child: DropdownButton2<LanguageModel>(
         isExpanded: true,
-        hint: Row(
-          children: [
-            SizedBox(
-              width: 4,
-            ),
-            Expanded(
-              child: Text(
-                'selectWallet'.tr,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ],
-        ),
+         hint: null,   
         items: list
-            .map((item) => DropdownMenuItem<MethodModel>(
+            .map((item) => DropdownMenuItem<LanguageModel>(
                   value: item,
-                  child: Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            '${(item.wallet_name as String).tr}',
-                            style: const TextStyle(fontFamily: 'Outfit-Medium'),
-                            overflow: TextOverflow.ellipsis,
+                  child: Column(
+                    children: [
+                      Container(
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            // border: Border(bottom: BorderSide(width: 1, color: AppColors.lightPurple))
                           ),
-                          5.width,
-                          // ImageNetwork(
-                          //   height: 30,
-                          //   width: 30,
-                          //   fitAndroidIos: BoxFit.cover,
-                          //   fitWeb: BoxFitWeb.cover,
-                          //   image: ApiConstants.imageUrl + item.wallet_icon,
-                          //   key: ValueKey(new Random().nextInt(100)),
-                          // )
-                        ],
-                      )),
-
-                  // Text(
-                  //   item.walletName,
-                  //   style: const TextStyle(
-                  //     fontSize: 14,
-                  //     fontWeight: FontWeight.bold,
-                  //     color: Colors.white,
-                  //   ),
-                  //   overflow: TextOverflow.ellipsis,
-                  // ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '${(item.languageDisplayName as String).tr}',
+                                style: const TextStyle(fontFamily: 'Outfit-Medium',color: AppColors.lightPurple),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              5.width,
+                            ],
+                          )),
+                          10.height,
+                          Divider(
+                            height: 1,
+                            color: AppColors.lightPurple,
+                          )
+                    ],
+                  ),
                 ))
             .toList(),
         value: value,
         onChanged: onChanged,
-        buttonStyleData: ButtonStyleData(
-          height: 50,
-          width: 300,
-          padding: const EdgeInsets.only(left: 14, right: 14),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(
-              color: Colors.black26,
-            ),
-            color: Colors.white,
-          ),
-          elevation: 2,
-        ),
-        iconStyleData: IconStyleData(
-          icon: Icon(
-            Icons.arrow_forward_ios_rounded,
-          ),
-          iconSize: 14,
-          iconEnabledColor: AppColors.primaryColor,
-          iconDisabledColor: Colors.grey,
-        ),
+        customButton:  Container(
+                  width: 50,
+                  height: 50,
+                  decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(360)),
+                  gradient: AppColors.primaryGradientColor
+                  ),
+                  child: Icon(Icons.language_rounded,color: AppColors.lightPurple,size: 25,),
+                  
+                ),
+       
         dropdownStyleData: DropdownStyleData(
           maxHeight: 200,
-          width: 200,
+          width: 150,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            gradient: AppColors.primaryGradientColor,
+            // color: Color,
           ),
-          offset: const Offset(-20, 0),
+          offset: const Offset(-10, -20),
           scrollbarTheme: ScrollbarThemeData(
             radius: const Radius.circular(40),
             thickness: MaterialStateProperty.all(6),

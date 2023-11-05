@@ -1,3 +1,7 @@
+import 'package:companyportfolio/controllers/language_controller.dart';
+import 'package:companyportfolio/extensions/int_extention.dart';
+import 'package:companyportfolio/translation/languageList.dart';
+import 'package:companyportfolio/widgets/dropdown_button_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -5,7 +9,6 @@ import 'package:companyportfolio/controllers/home/HomeController.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../constants/app_colors.dart';
 import '../data/nav_items_list.dart';
-import 'custom_nav_button.dart';
 import 'navbar_item.dart';
 import 'package:companyportfolio/extensions/hover_pointer_extinsion.dart';
 
@@ -40,7 +43,6 @@ class NavBar extends StatelessWidget {
           borderRadius: BorderRadius.only(
            bottomRight: Radius.circular(20.0),
            bottomLeft: Radius.circular(20.0),
-           
            )),
       // decoration: BoxDecoration(gradient: AppColors.primaryGradientColor),
       child: Row(
@@ -50,18 +52,35 @@ class NavBar extends StatelessWidget {
           Container(
             child: GetBuilder<HomeController>(builder: (controller) {
               return Row(children: [
-                ...navigationItemsList.map(
+                ...navigationItemsList.asMap().entries.map(
                   (e) => Row(
+                    
                     children: [
                       NavBarItem(
-                        model: e,
+                        model: e.value,
                       ),
-                      const SizedBox(
-                        width: 60,
-                      ),
+                     e.key == navigationItemsList.length? 10.width:40.width
                     ],
                   ),
                 ),
+                GetBuilder<LanguageController>(
+                  builder: (controller) {
+                    return CustomDropDownButtonList(list: languageList,
+                     onChanged: (languageModel){
+                      controller.setLanguage(languageModel!);
+                     },
+                      value: controller.lm);
+                  }
+                )
+                // Container(
+                //   width: 50,
+                //   height: 50,
+                //   decoration:BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(360)),
+                //   gradient: AppColors.primaryGradientColor
+                //   ),
+                //   child: Icon(Icons.language_rounded,color: AppColors.lightPurple,size: 25,),
+                  
+                // ),
               ]);
             }),
           )
@@ -95,10 +114,11 @@ class NavBar extends StatelessWidget {
   Widget navBarLogo() {
     return SizedBox(
       width: 150,
+      height: 30,
       child:
           // Text('')
           Image.asset(
-        'assets/images/logo128.png',
+        'assets/images/logo.png',
         fit: BoxFit.cover,
       ),
     );
